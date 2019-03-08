@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Enseignants</title>
+<link rel="stylesheet" th:href="@{enseignants/css/enseignants.css}"/>
+</head>
+<body>
+<div class="subHeader">
+<p>Call us : +89745812</p>
+</div>
+<h1>Université de Cambridge</h1>
+<h2>Nos enseignants</h2>
+
+	<a class="btn"
+		th:href="@{enseignant-ajouter}"
+	>Ajouter un
+		enseignant</a>
+	<table>
+		<tr>
+		<th>Photo</th>
+			<th>Id</th>
+			<th>Numéro enseignant</th>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Date de naissance</th>
+			<th>Sexe</th>
+			<th>Grade</th>
+			<th>Date d'embauche</th>
+			
+		</tr>
+		<tr th:each="ens : ${ listeE}" th:class="${ens.sexe}" >
+		<td ><img th:src="${ens.photo}"  class="img"/></td>
+
+			<td th:text="${ens.id}"></td>
+			<td
+				th:text="${ens.numeroEnseignant}"
+			></td>
+			<td
+				th:text="${ens.nom}"
+			></td>
+			<td
+				th:text="${ens.prenom}"
+			></td>
+			
+			<td
+				th:text="${#dates.format(ens.dateNaissance, 'dd/MM/yyyy' )}"
+			></td>
+			<td
+				th:text="${ens.sexe}"
+			></td>
+			<td
+				th:text="${ens.grade}"
+			></td>
+			<td
+				th:text="${#dates.format(ens.dateEmbauche, 'dd/MM/yyyy' )}"
+			></td>
+			<td><a
+				class="btn2"
+				th:href="@{enseignants-infos(id=${ens.id})}"
+			>  Voir</a></td>
+		</tr>
+	</table>
+
+</body>
+</html>

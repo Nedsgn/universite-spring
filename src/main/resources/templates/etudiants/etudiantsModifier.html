@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>etudiant modifier</title>
+<link rel="stylesheet" th:href="@{enseignants/css/add.css}"/>
+
+</head>
+<body>
+<h1>Modifier un etudiant </h1>
+	<img alt="user" src="https://img.icons8.com/dotty/80/000000/administrator-male.png"/>
+		<form id="form" th:action="@{etudiant-modif}" method="POST" th:object="${listeE}"> <!-- l'adresse qu'on a mi dans l'action est celle qu'on a mi dans le controller afin de recuperer les données -->
+		<fieldset>
+					<input hidden="hidden" type="text" name="id" id="id" th:value="${listeE.id}"  />
+						<p>
+				<label>Femme :</label><input type="radio" name="sexe" id="F" value="F"/>
+				<label>Homme :</label><input type="radio" name="sexe" id="M" value="M"/>
+				</p>
+					
+				<label for="nom">Nom :</label>
+				<input type="text" name="nom" id="nom" th:value="${listeE.nom}"  th:field="*{nom}"/>
+				<br/>
+				<label id="labelHidden" >Veuillez saisir votre prenom</label>
+				<label for="prenom">Prénom :</label>
+				<input type="text" name="prenom" id="prenom" th:value="${listeE.prenom}" th:field="*{prenom}"/>
+				<br/>
+				<label for="dateNaissance">Date de naissance :</label>
+				<input type="date" id="dateNaissance" th:value="${listeE.dateNaissance}" th:field="*{dateNaissance}"/>
+				<br/>
+				<label for="numeroEtudiant">Numéro Etudiant :</label>
+				<input type="text" name="numeroEtudiant" id="numeroEtudiant" th:value="${listeE.numeroEtudiant}" th:field="*{numeroEtudiant}"/>
+				<br/>
+				
+				<label for="photo">Photo :</label>
+				<input type="text" name="photo" id="photo"th:value="${listeE.photo}"/>
+				<br/>
+	<input class="btn" type="reset"/>
+<input class="btn" type="button" value="valider" onclick="validerFormulaire();"/>
+		</fieldset>
+
+		</form>
+		
+	<a class ="btn" th:href="@{etudiants}">retour</a>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script type="text/javascript" th:src="@{/etudiants/js/validation-etudiants.js}"></script>
+</body>
+</html>

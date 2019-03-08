@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Etudiants Infos</title>
+<link rel="stylesheet" th:href="@{enseignants/css/infos.css}"/>
+</head>
+<body>
+<div class="subHeader">
+<p>Call us : +89745812</p>
+</div>
+<h1>Université de Cambridge</h1>
+<h2><span th:text="${listeE.nom}"></span> <span th:text="${listeE.prenom}"></span></h2> 
+<div class="container">
+
+
+
+
+<img alt="" th:src="${listeE.photo}" class="photo">
+<ul>
+<span>♣ Numéro Etudiant :</span>
+<li th:text="${listeE.numeroEtudiant}"></li>
+<span>♣ Date de naissance :</span>
+<li th:text="${listeE.dateNaissance}"></li>
+<span>♣ Sexe de l'etudiant :</span>
+<li th:text="${listeE.sexe}"></li>
+
+
+
+
+</ul>
+
+</div>
+<a class="btn" th:href="@{etudiant-supprimer(id=${listeE.id})}">Supprimer</a>
+<a class="btn" th:href="@{etudiant-modifier(id=${listeE.id})}">Modifier</a>
+
+<a class="btn" th:href="@{etudiants}">Retour</a>
+</body>
+</html>

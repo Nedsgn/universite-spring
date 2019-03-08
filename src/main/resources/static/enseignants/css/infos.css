@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+body{
+	background-image: url("http://college-vauban.fr/wp-content/uploads/2016/03/university-background-04-2.jpg");
+	background-attachment: fixed;
+	color: white;
+	margin:0;
+	font-family: monospace;
+}
+.subHeader{
+	background-color:#00003c;
+	max-width:100%;
+	padding:1px;
+}
+.container{
+	font-size:1.4em;
+	width:50%;
+	border:1px solid white;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	padding:10px;
+	
+}
+h1{
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1em; 
+	margin-bottom:5%;
+}
+h2{
+	text-align: center;
+	
+}
+ul {
+	list-style: none;
+}
+
+span{
+	color:#B28600;
+	font-weight: bold;
+}
+
+ .btn{
+  border-radius:30px;
+  text-decoration: none;
+  padding:10px;
+  background-color:#408080;
+  color:white;
+  width:20%;
+  margin:0 auto;
+  margin-bottom:50px;
+  text-align:center;
+  }
+  
+  .btn:hover{
+  background-color: #408080;
+  border:1px solid #000080;}

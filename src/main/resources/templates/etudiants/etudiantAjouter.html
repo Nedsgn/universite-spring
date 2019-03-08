@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Etudiant ajouter</title>
+<link rel="stylesheet" th:href="@{enseignants/css/add.css}"/>
+</head>
+<body>
+<div class="subHeader">
+<p>Call us : +89745812</p>
+</div>
+<h1>Université de Cambridge</h1>
+
+	<img alt="user" src="https://img.icons8.com/dotty/80/000000/administrator-male.png"/>
+		<form id="form" th:action="@{etudiant-add}" method="POST" th:object="${etudiantAdd}"> <!-- l'adresse qu'on a mi dans l'action est celle qu'on a mi dans le controller afin de recuperer les données -->
+		<fieldset>
+		<legend>Ajouter un etudiant</legend>
+		
+		<p class="radio"><label for="F">Femme :</label>
+				<input type="radio" name="sexe" id="F" th:field="*{sexe}" value="F" checked="checked"/>
+					<br/>
+				<label for="sexe">Homme :</label>
+				
+				<input type="radio" name="sexe" id="M" th:field="*{sexe}" value="M" />
+					</p>
+				
+				<label for="nom">Nom :</label>
+				<input class="input" type="text" name="nom" id="nom" th:field="*{nom}"/>
+				<br/>
+				<label id="labelHidden" >Veuillez saisir votre prenom</label>
+				
+				<label for="prenom">Prénom :</label>
+				<input class="input"  type="text" name="prenom" id="prenom" th:field="*{prenom}"/>
+				<br/>
+				<label for="date">Date de naissance :</label>
+				<input class="input" type="date" name="date_naissance" id="dateNaissance" th:field="*{dateNaissance}"/>
+				<br/>
+				<label for="numeroEtudiant">Numéro Etudiant :</label>
+				<input class="input" type="text" name="numeroEtudiant" id="numeroEtudiant" th:field="*{numeroEtudiant}"/>
+				<br/>
+				
+				<label for="photo">Photo :</label>
+				<input class="input" type="text" name="photo" id="photo" th:field="*{photo}"/>
+				<br/>
+	<input class="btn" type="reset"/>
+<input class="btn" type="button" value="valider"   onclick="validerFormulaire();"/>
+		</fieldset>
+
+		</form>
+		
+	<a class ="btn" th:href="@{etudiants}">retour</a>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script type="text/javascript" th:src="@{/etudiants/js/validation-etudiants.js}"></script>
+</body>
+</html>
